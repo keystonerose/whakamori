@@ -13,4 +13,5 @@ set_property(TARGET whakamori PROPERTY CXX_STANDARD 17)
 target_include_directories(whakamori PRIVATE ${SRC_DIR})
 include("${SRC_DIR}/CMakeLists.txt")
 
+target_link_libraries(whakamori libanki stdc++fs)
 install(TARGETS whakamori RUNTIME DESTINATION bin)
