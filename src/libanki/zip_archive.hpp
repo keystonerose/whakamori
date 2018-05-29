@@ -16,7 +16,7 @@ namespace anki {
     public:
 
         // Opens an archive available from the filesystem path `src`. After construction, the
-        // archive is in an open state. Throws `zip_error` if the archive cannot be opened.
+        // archive is in an open state. Throws `zip_error` on failure.
 
         explicit zip_archive(const path& src);
 
@@ -38,10 +38,16 @@ namespace anki {
         zip_archive(const zip_archive&) = delete;
         auto operator=(const zip_archive&) -> zip_archive& = delete;
 
+        // Determines whether the archive contains the specified file. Regardless of the underlying
+        // operating system, the path is case-sensitive (and includes directories). If the archive
+        // has been closed, returns false. Throws `zip_error` on failure.
+
+        auto contains(const path& file) const -> bool;
+
         auto is_open() const -> bool { return _handle != nullptr; }
 
-        // Closes the archive if it has not been closed already. Throws `zip_error` if the archive
-        // cannot be closed cleanly.
+        // Closes the archive if it is currently in an open state. May be called to no effect if the
+        // archive has already been closed. Throws `zip_error` on failure.
 
         void close();
 

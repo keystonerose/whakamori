@@ -5,7 +5,7 @@
 
 namespace anki {
 
-    // TODO:DOC
+    // [TODO] doc
     // throws zip_error
 
     void import(const path& src);
