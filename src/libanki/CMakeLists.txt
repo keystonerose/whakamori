@@ -10,7 +10,9 @@ set_property(TARGET libanki PROPERTY CXX_STANDARD 17)
 
 target_sources(libanki PRIVATE
     "anki.cpp"
+    "impl/libzip/error.cpp"
     "zip_archive.cpp"
+    "zip_file.cpp"
 )
 
 target_include_directories(libanki SYSTEM PRIVATE ${LIBZIP_INCLUDE_DIRS})
