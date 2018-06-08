@@ -11,6 +11,7 @@ set_property(TARGET libanki PROPERTY CXX_STANDARD 17)
 target_sources(libanki PRIVATE
     "anki.cpp"
     "apkg_version.cpp"
+    "error.cpp"
     "impl/libzip/error.cpp"
     "zip_archive.cpp"
     "zip_file.cpp"

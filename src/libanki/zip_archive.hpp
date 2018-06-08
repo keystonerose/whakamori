@@ -4,7 +4,6 @@
 #include "filesystem.hpp"
 #include "zip_file.hpp"
 
-#include <stdexcept>
 #include <utility>
 
 namespace anki {
@@ -62,11 +61,6 @@ namespace anki {
     private:
 
         void* _handle = nullptr;
-    };
-
-    class zip_error : public std::runtime_error {
-    public:
-        using runtime_error::runtime_error;
     };
 }
 

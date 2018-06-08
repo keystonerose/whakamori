@@ -10,8 +10,8 @@ namespace anki::impl::libzip {
 
     auto has_error_excluding(zip_error_t& error, int excluded_code) -> bool;
 
-    // Throws an `anki::zip_error` exception describing an error state from libzip, reading that
-    // error state from a libzip structure if necessary.
+    // Throws an `anki::error` exception describing an error state from libzip, reading that error
+    // state from a libzip structure if necessary.
 
     [[noreturn]] void throw_error(zip_error_t& error);
     [[noreturn]] void throw_error(int code);
